@@ -1,0 +1,36 @@
+.workflow {
+  &-main {
+    width: 100%;
+    &-forms {
+      &-items {
+        display: flex;
+        gap: 64px;
+        margin-top: 30px;
+
+        .item {
+          width: 100%;
+          &-switch {
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+            &-label {
+              margin-right: 4px;
+              font: normal normal bold 14px / 20px Inter;
+              letter-spacing: 0px;
+              color: #262626;
+            }
+          }
+        }
+        &.textarea {
+          margin-top: 30px;
+        }
+      }
+
+      &-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

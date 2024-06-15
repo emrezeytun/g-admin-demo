@@ -1,0 +1,20 @@
+.main {
+  &-header {
+    width: 100%;
+  }
+  &-container {
+    display: flex;
+    &-sidebar {
+      width: 270px;
+      background: var(---f9f9f9-grey50) 0% 0% no-repeat padding-box;
+      padding: 12px;
+      color: #fff;
+      height: 100vh;
+      margin-top: 4px;
+    }
+    &-page {
+      padding: 80px 60px;
+      width: 100%;
+    }
+  }
+}

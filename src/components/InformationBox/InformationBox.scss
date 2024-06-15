@@ -1,0 +1,46 @@
+.information {
+  margin: 30px 0;
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 4px;
+    .texts {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 4px;
+      }
+      .title {
+        font-weight: 800;
+        margin-right: 4px;
+      }
+    }
+
+    .actions {
+      .title {
+        cursor: pointer;
+      }
+      .description {
+        margin-left: 8px;
+        cursor: pointer;
+      }
+    }
+    &.info {
+      background-color: #f5f9ff;
+      border: 1px solid #3c82f6;
+      color: #1f3a8a;
+    }
+    &.success {
+      background-color: #eafaea;
+      border: 1px solid #006d1a;
+      color: #4b8850;
+    }
+    &.error {
+      background-color: #faeaea;
+      border: 1px solid #850000;
+      color: #884b4b;
+    }
+  }
+}

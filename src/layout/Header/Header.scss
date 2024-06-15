@@ -1,0 +1,25 @@
+.header {
+  background: var(--white) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #0000001a;
+  padding: 32px;
+  display: flex;
+  &-logo {
+    width: 270px;
+
+    img {
+      width: 176px;
+      height: auto;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  &-actions {
+    width: 100%;
+    margin-left: 90px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
