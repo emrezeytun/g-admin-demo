@@ -25,7 +25,7 @@ yarn
 To start the project on the local server, run the following command:
 
 ```bash
-yarn serve
+yarn start
 ```
 
 The project will run at [http://localhost:3000](http://localhost:3000).
