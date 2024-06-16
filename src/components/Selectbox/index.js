@@ -7,6 +7,7 @@ export default function Selectbox({
   label,
   width,
   formKey,
+  defaultValue,
   onChangeForm,
   selectboxData,
 }) {
@@ -18,6 +19,9 @@ export default function Selectbox({
         style={{ width: width }}
         placeholder={placeholder}
       >
+        <option value="" disabled selected={!defaultValue}>
+          {placeholder}
+        </option>
         {selectboxData.length
           ? selectboxData.map((i) => {
               return (

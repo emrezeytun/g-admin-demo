@@ -6,13 +6,13 @@ import {
   Switch,
   Textarea,
   Button,
-} from '../../components';
+} from '@components';
 import './Workflow.scss';
-import { Information, Success, Error } from '../../assets/icons';
+import { Information, Success, Error } from '@icons';
 import {
   getUsers as getUserService,
   sendPost as sendPostService,
-} from '../../services/managementService';
+} from '@services/managementService';
 
 export default function Workflow() {
   const [isInformationBoxOpen, setIsInformationBoxOpen] = useState(true);
@@ -51,7 +51,9 @@ export default function Workflow() {
   };
 
   const sendPost = async () => {
-    const { status } = await sendPostService(form);
+    const payload = { ...form };
+    if (!isSwitchActive) delete payload.body;
+    const { status } = await sendPostService(payload);
     if (status === 201) {
       setInformationBoxProps({
         type: 'success',
@@ -59,7 +61,11 @@ export default function Workflow() {
         title: 'Successful:',
         description: 'The form has been submitted.',
       });
-      setForm({})
+      setForm({
+        title: '',
+        userId: '',
+        body: '',
+      });
     } else {
       setInformationBoxProps({
         type: 'error',
@@ -98,6 +104,7 @@ export default function Workflow() {
               width="100%"
               placeholder="Enter a Title"
               label="Title"
+              defaultValue={form.title}
               onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
               formKey="title"
             />
@@ -106,8 +113,9 @@ export default function Workflow() {
           <div className="item">
             <Selectbox
               width="100%"
-              placeholder="Enter a Title"
+              placeholder="Select user"
               label="User"
+              defaultValue={form.userId}
               onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
               formKey="userId"
               selectboxData={users}
@@ -131,6 +139,7 @@ export default function Workflow() {
               <Textarea
                 width="100%"
                 placeholder="Enter a body"
+                defaultValue={form.body}
                 label="Body"
                 onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
                 formKey="body"

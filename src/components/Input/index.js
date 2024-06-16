@@ -15,7 +15,7 @@ export default function Input({
     <div className="input-container">
       {icon ? (
         <div className="input-container-icon">
-          <img src={icon} />
+          <img alt="Icon" src={icon} />
         </div>
       ) : (
         ''

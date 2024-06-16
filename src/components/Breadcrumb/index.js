@@ -1,6 +1,6 @@
 import React from 'react';
 import './Breadcrumb.scss';
-import { breadcrumbDatas } from '../../constants';
+import { breadcrumbDatas } from '@constants';
 
 const Breadcrumb = () => {
   const renderBreadcrumb = (data, isCurrent = false) => {

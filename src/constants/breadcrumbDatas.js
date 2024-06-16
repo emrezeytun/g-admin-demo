@@ -1,7 +1,7 @@
 const breadcrumbDatas = {
   name: 'Home',
   childDatas: {
-    name: 'blabla',
+    name: 'Application',
     childDatas: {
       name: 'Workflow',
       childDatas: {

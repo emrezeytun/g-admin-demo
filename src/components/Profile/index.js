@@ -1,12 +1,7 @@
 import React from 'react';
 import './Profile.scss';
-import { Icon, Avatar } from '../';
-import {
-  Folder,
-  Notification,
-  Settings,
-  Information,
-} from '../../assets/icons';
+import { Icon, Avatar } from '@components';
+import { Folder, Notification, Settings, Information } from '@icons';
 
 export default function Profile() {
   const headerRightBarIcons = [

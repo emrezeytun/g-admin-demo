@@ -4,7 +4,6 @@ import Filestorage from './Filestorage.svg';
 import Flowmachine from './Flowmachine.svg';
 import Microfunctions from './Microfunctions.svg';
 import Monitoring from './Monitoring.svg';
-import Portal from './Portal.svg';
 import Studio from './Studio.svg';
 import Console from './Console.svg';
 import Notification from './Notification.svg';
@@ -22,7 +21,6 @@ export {
   Flowmachine,
   Microfunctions,
   Monitoring,
-  Portal,
   Studio,
   Console,
   Notification,

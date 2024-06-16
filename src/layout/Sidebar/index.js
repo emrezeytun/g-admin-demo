@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.scss';
-import { sidebarDatas } from '../../constants';
-import { Icon } from '../../components';
+import { sidebarDatas } from '@constants';
+import { Icon } from '@components';
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(sidebarDatas);

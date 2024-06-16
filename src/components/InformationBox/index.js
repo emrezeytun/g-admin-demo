@@ -1,6 +1,5 @@
 import React from 'react';
-import { Icon } from '../';
-import { Information } from '../../assets/icons';
+import { Icon } from '@components';
 import './InformationBox.scss';
 
 export default function InformationBox({

@@ -1,5 +1,5 @@
-import { baseUrl } from '../constants';
-import { httpHelper } from '../../src/helper';
+import { baseUrl } from '@constants';
+import { httpHelper } from '@helper';
 
 async function getUsers() {
   const url = `${baseUrl}/users`;

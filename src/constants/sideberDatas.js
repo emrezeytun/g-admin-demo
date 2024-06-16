@@ -5,16 +5,15 @@ import {
   Flowmachine,
   Microfunctions,
   Monitoring,
-  Portal,
   Studio,
   Console,
-} from '../assets/icons';
+} from '@icons';
 
 const sidebarDatas = [
   {
     label: 'Tüm Hizmetler',
     menus: [
-      { name: 'Portal', key: 'potal', icon: Monitoring, isActive: true },
+      { name: 'Portal', key: 'potal', icon: Console, isActive: true },
       { name: 'Studio', key: 'studio', icon: Studio, isActive: false },
       {
         name: 'Datasources',
