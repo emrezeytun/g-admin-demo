@@ -51,6 +51,14 @@ export default function Workflow() {
     }
   };
 
+  const resetForm = () => {
+    setForm({
+      title: '',
+      userId: '',
+      body: '',
+    });
+  }
+
   const sendPost = async () => {
     setIsLoading(true);
     const payload = { ...form };
@@ -63,11 +71,7 @@ export default function Workflow() {
         title: 'Successful:',
         description: 'The form has been submitted.',
       });
-      setForm({
-        title: '',
-        userId: '',
-        body: '',
-      });
+      resetForm()
     } else {
       setInformationBoxProps({
         type: 'error',
@@ -159,7 +163,7 @@ export default function Workflow() {
 
             <div className="workflow-main-forms-buttons">
               <Button sendPost={sendPost} name="Accept" type="primary" />
-              <Button name="Cancel" type="ghost" />
+              <Button sendPost={resetForm} name="Cancel" type="ghost" />
             </div>
           </div>
         </>
