@@ -6,7 +6,6 @@ import { SearchIcon } from '@icons';
 
 export default function Header() {
   const onChangeForm = (val) => {
-    console.log(val);
   };
   return (
     <div className="header">
