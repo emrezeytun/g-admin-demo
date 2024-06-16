@@ -22,7 +22,9 @@ const Breadcrumb = () => {
     );
   };
 
-  return <div>{renderBreadcrumb(breadcrumbDatas)}</div>;
+  return (
+    <div className="breadcrumb-main">{renderBreadcrumb(breadcrumbDatas)}</div>
+  );
 };
 
 export default Breadcrumb;

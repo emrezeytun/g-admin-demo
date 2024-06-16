@@ -1,6 +1,9 @@
 .breadcrumb {
   color: #979797;
   display: flex;
+  &-main {
+    margin-bottom: 30px;
+  }
   &-name {
     cursor: pointer;
     margin: 0 4px;

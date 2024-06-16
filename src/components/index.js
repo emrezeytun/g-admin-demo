@@ -8,6 +8,7 @@ import Selectbox from './Selectbox';
 import Switch from './Switch';
 import Textarea from './Textarea';
 import Button from './Button';
+import Loading from './Loading';
 
 export {
   Profile,
@@ -20,4 +21,5 @@ export {
   Switch,
   Textarea,
   Button,
+  Loading,
 };

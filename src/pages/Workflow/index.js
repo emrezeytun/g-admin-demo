@@ -6,6 +6,7 @@ import {
   Switch,
   Textarea,
   Button,
+  Loading,
 } from '@components';
 import './Workflow.scss';
 import { Information, Success, Error } from '@icons';
@@ -29,9 +30,9 @@ export default function Workflow() {
     body: '',
   });
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onChangeForm = (formKey, val) => {
-    console.log('keee', formKey, val);
     setForm({ ...form, [formKey]: val });
   };
 
@@ -51,6 +52,7 @@ export default function Workflow() {
   };
 
   const sendPost = async () => {
+    setIsLoading(true);
     const payload = { ...form };
     if (!isSwitchActive) delete payload.body;
     const { status } = await sendPostService(payload);
@@ -74,6 +76,7 @@ export default function Workflow() {
         description: 'There is an error.',
       });
     }
+    setIsLoading(false);
     setIsInformationBoxOpen(true);
   };
 
@@ -83,78 +86,84 @@ export default function Workflow() {
 
   return (
     <div className="workflow-main">
-      <div className="workflow-main-informatin-box">
-        {isInformationBoxOpen ? (
-          <InformationBox
-            isInformationBoxOpen={isInformationBoxOpen}
-            setIsInformationBoxOpen={setIsInformationBoxOpen}
-            type={informationBoxProps.type}
-            icon={informationBoxProps.icon}
-            title={informationBoxProps.title}
-            description={informationBoxProps.description}
-          />
-        ) : (
-          ''
-        )}
-      </div>
-      <div className="workflow-main-forms">
-        <div className="workflow-main-forms-items">
-          <div className="item">
-            <Input
-              width="100%"
-              placeholder="Enter a Title"
-              label="Title"
-              defaultValue={form.title}
-              onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
-              formKey="title"
-            />
-          </div>
-
-          <div className="item">
-            <Selectbox
-              width="100%"
-              placeholder="Select user"
-              label="User"
-              defaultValue={form.userId}
-              onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
-              formKey="userId"
-              selectboxData={users}
-            />
-          </div>
-        </div>
-
-        <div className="workflow-main-forms-items">
-          <div className="item-switch">
-            <span className="item-switch-label">Active switch:</span>
-            <Switch
-              isSwitchActive={isSwitchActive}
-              setIsSwitchActive={setIsSwitchActive}
-            />
-          </div>
-        </div>
-
-        {isSwitchActive ? (
-          <div className="workflow-main-forms-items textarea">
-            <div className="item">
-              <Textarea
-                width="100%"
-                placeholder="Enter a body"
-                defaultValue={form.body}
-                label="Body"
-                onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
-                formKey="body"
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <div className="workflow-main-informatin-box">
+            {isInformationBoxOpen ? (
+              <InformationBox
+                isInformationBoxOpen={isInformationBoxOpen}
+                setIsInformationBoxOpen={setIsInformationBoxOpen}
+                type={informationBoxProps.type}
+                icon={informationBoxProps.icon}
+                title={informationBoxProps.title}
+                description={informationBoxProps.description}
               />
+            ) : (
+              ''
+            )}
+          </div>
+          <div className="workflow-main-forms">
+            <div className="workflow-main-forms-items">
+              <div className="item">
+                <Input
+                  width="100%"
+                  placeholder="Enter a Title"
+                  label="Title"
+                  defaultValue={form.title}
+                  onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
+                  formKey="title"
+                />
+              </div>
+
+              <div className="item">
+                <Selectbox
+                  width="100%"
+                  placeholder="Select user"
+                  label="User"
+                  defaultValue={form.userId}
+                  onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
+                  formKey="userId"
+                  selectboxData={users}
+                />
+              </div>
+            </div>
+
+            <div className="workflow-main-forms-items">
+              <div className="item-switch">
+                <span className="item-switch-label">Active switch:</span>
+                <Switch
+                  isSwitchActive={isSwitchActive}
+                  setIsSwitchActive={setIsSwitchActive}
+                />
+              </div>
+            </div>
+
+            {isSwitchActive ? (
+              <div className="workflow-main-forms-items textarea">
+                <div className="item">
+                  <Textarea
+                    width="100%"
+                    placeholder="Enter a body"
+                    defaultValue={form.body}
+                    label="Body"
+                    onChangeForm={(formKey, val) => onChangeForm(formKey, val)}
+                    formKey="body"
+                  />
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
+
+            <div className="workflow-main-forms-buttons">
+              <Button sendPost={sendPost} name="Accept" type="primary" />
+              <Button name="Cancel" type="ghost" />
             </div>
           </div>
-        ) : (
-          ''
-        )}
-
-        <div className="workflow-main-forms-buttons">
-          <Button sendPost={sendPost} name="Accept" type="primary" />
-          <Button name="Cancel" type="ghost" />
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 }

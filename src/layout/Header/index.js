@@ -19,7 +19,7 @@ export default function Header() {
             onChangeForm={onChangeForm}
             icon={SearchIcon}
             placeholder="Kaynakları, hizmetleri ve belgeleri arayın"
-            width="40vw"
+            width="30vw"
           />
         </div>
         <div className="header-profile">
