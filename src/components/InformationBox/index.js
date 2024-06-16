@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Icon } from '@components';
 import './InformationBox.scss';
 
@@ -8,7 +8,18 @@ export default function InformationBox({
   title,
   description,
   setIsInformationBoxOpen,
+  tempTime,
 }) {
+  const onChangeBoxByTime = () => {
+    setTimeout(() => {
+      setIsInformationBoxOpen(false);
+    }, tempTime);
+  };
+  useEffect(() => {
+    if (tempTime) {
+      onChangeBoxByTime();
+    }
+  }, []);
   return (
     <div className="information">
       <div className={`information-box ${type}`}>

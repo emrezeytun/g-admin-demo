@@ -23,6 +23,7 @@ export default function Workflow() {
     icon: Information,
     title: 'New updates:',
     description: 'Restart to get the latest updates.',
+    tempTime: 0,
   });
   const [form, setForm] = useState({
     title: '',
@@ -57,7 +58,7 @@ export default function Workflow() {
       userId: '',
       body: '',
     });
-  }
+  };
 
   const sendPost = async () => {
     setIsLoading(true);
@@ -70,14 +71,16 @@ export default function Workflow() {
         icon: Success,
         title: 'Successful:',
         description: 'The form has been submitted.',
+        tempTime: 3000,
       });
-      resetForm()
+      resetForm();
     } else {
       setInformationBoxProps({
         type: 'error',
         icon: Error,
         title: 'Error:',
         description: 'There is an error.',
+        tempTime: 3000,
       });
     }
     setIsLoading(false);
@@ -103,6 +106,7 @@ export default function Workflow() {
                 icon={informationBoxProps.icon}
                 title={informationBoxProps.title}
                 description={informationBoxProps.description}
+                tempTime={informationBoxProps.tempTime}
               />
             ) : (
               ''

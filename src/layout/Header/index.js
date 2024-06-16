@@ -5,8 +5,7 @@ import Logo from '@assets/logo.png';
 import { SearchIcon } from '@icons';
 
 export default function Header() {
-  const onChangeForm = (val) => {
-  };
+  const onChangeForm = (val) => {};
   return (
     <div className="header">
       <div className="header-logo">
