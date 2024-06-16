@@ -31,5 +31,20 @@
         justify-content: flex-end;
       }
     }
+    &-texts {
+      .title {
+        font: normal normal normal 14px/20px Space Mono;
+        color: #666666;
+      }
+      .description {
+        font: normal normal normal 14px/20px Inter;
+        color: #262626;
+      }
+      h1 {
+        font: var(--unnamed-font-style-normal) normal
+          var(--unnamed-font-weight-bold) var(--unnamed-font-size-20) /
+          var(--unnamed-line-spacing-26) var(--unnamed-font-family-inter);
+      }
+    }
   }
 }

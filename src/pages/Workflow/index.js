@@ -112,6 +112,19 @@ export default function Workflow() {
               ''
             )}
           </div>
+          <div className="workflow-main-texts">
+            <p className="title">NG Apps Workflow</p>
+            <h1>Visual workflow automation.Now with code.</h1>
+            <p className="description">
+              This is commonly used in the expressive type theme layouts for
+              long paragraphs with more than four lines. The looser line height
+              and larger size makes for comfortable, long-form reading, in
+              mediums that allow for more space. This size type is rarely used
+              for body copy in components. We always left-align type; we never
+              center it.
+            </p>
+          </div>
+
           <div className="workflow-main-forms">
             <div className="workflow-main-forms-items">
               <div className="item">
