@@ -1,0 +1,92 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../assets/cat.png');
+  background-size: cover;
+  @media only screen and (max-width: 1460px) {
+    background-position: center;
+  }
+  &-container {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    height: 100vh;
+    padding: 95px 100px;
+    width: 35vw;
+    @media only screen and (max-width: 1024px) {
+      width: 100vw;
+    }
+    box-sizing: border-box;
+    &-logo {
+      margin-bottom: 58px;
+      img {
+        width: 204px;
+        height: auto;
+      }
+    }
+    &-forms {
+      display: flex;
+      flex-direction: column;
+      &-texts {
+        margin-bottom: 30px;
+        p {
+          text-align: left;
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing: 0px;
+          color: #000000;
+          margin: 6px 0;
+        }
+        span {
+          text-align: left;
+          font-size: 16px;
+          font-weight: 300;
+          letter-spacing: 0px;
+          color: #8f9bb3;
+          opacity: 1;
+        }
+      }
+      input {
+        padding: 20px;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        color: #000000;
+        font-weight: 600;
+        font-size: 16px;
+        border: 1px solid #dfe1e6;
+        border-radius: 10px;
+        outline: none;
+        margin-bottom: 10px;
+        width: 70%;
+      }
+      button {
+        margin-top: 30px;
+        padding: 16px 20px;
+        background: black;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        width: max-content;
+        cursor: pointer;
+        &:hover{
+            opacity: .8;
+        }
+      }
+    }
+    &-informations {
+      margin-top: 30px;
+      .c-pointer {
+        cursor: pointer;
+      }
+      p {
+        margin: 0;
+        font-weight: 300;
+        font-size: 16px;
+        margin-bottom: 18px;
+        span {
+          font-size: 16px;
+          color: black;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

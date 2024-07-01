@@ -1,3 +1,4 @@
 import Workflow from './Workflow';
+import Login from './Login';
 
-export { Workflow };
+export { Workflow, Login };
