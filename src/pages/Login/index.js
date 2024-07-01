@@ -12,7 +12,7 @@ export default function Login() {
         <div className="login-container-forms">
           <div className="login-container-forms-texts">
             <p>Oturum aç</p>
-            <span>Aşağıdaki bilgileri doldurarak giriş yapabilrisiniz.</span>
+            <span>Aşağıdaki bilgileri doldurarak giriş yapabilirsiniz.</span>
           </div>
           <input placeholder="E-Posta" type="text"></input>
           <input placeholder="Şifre" type="password"></input>
